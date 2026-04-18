@@ -20,6 +20,54 @@ No opaque keyword rules. The LLM does the judgment; the scripts do the API plumb
 
 Replace `catuscio/gh-stars-classifier-skill` with your own `OWNER/REPO` if you forked this.
 
+## Using with other CLI agents
+
+The same skill works across every agentic CLI that reads a local markdown
+instruction file. The canonical workflow is [`AGENTS.md`](AGENTS.md); each
+CLI has a thin entry file that points at it.
+
+| CLI | Entry file | Install |
+|---|---|---|
+| Claude Code | `skills/gh-stars-classifier/SKILL.md` | plugin marketplace (above) |
+| Codex CLI (OpenAI) | `AGENTS.md` | `git clone` + `cd` + `codex` |
+| opencode | `AGENTS.md` | `git clone` + `cd` + `opencode` |
+| Gemini CLI | `GEMINI.md` (imports `AGENTS.md`) | `git clone` + `cd` + `gemini` |
+
+### Codex CLI / opencode
+
+Both read `AGENTS.md` at the repo root automatically:
+
+```bash
+git clone https://github.com/catuscio/gh-stars-classifier-skill
+cd gh-stars-classifier-skill
+codex    # or: opencode
+```
+
+Then ask: *"organize my starred repos into GitHub Lists."* The agent loads
+AGENTS.md and walks you through the five-phase workflow with confirmations.
+
+### Gemini CLI
+
+Gemini CLI reads `GEMINI.md`, which `@`-imports the same workflow:
+
+```bash
+git clone https://github.com/catuscio/gh-stars-classifier-skill
+cd gh-stars-classifier-skill
+gemini
+```
+
+### Root path resolution
+
+Every phase in `AGENTS.md` uses `${GH_STARS_CLASSIFIER_ROOT}/scripts/...`.
+The preamble resolves it in priority order:
+
+1. `$GH_STARS_CLASSIFIER_ROOT` if you exported it
+2. `$CLAUDE_PLUGIN_ROOT` (auto-set by Claude Code's plugin loader)
+3. `$PWD` (your current directory — just `cd` into the clone)
+
+So for Codex / opencode / Gemini: `cd` into the repo before invoking the CLI,
+or export the variable explicitly.
+
 ## Prerequisites
 
 - [GitHub CLI](https://cli.github.com/) (`gh`) authenticated with the `user` scope:

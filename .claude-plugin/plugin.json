@@ -1,6 +1,6 @@
 {
   "name": "gh-stars-classifier",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Classify your GitHub starred repositories into semantic categories and sync them to GitHub Lists, using Claude's reasoning instead of static keyword rules.",
   "author": {
     "name": "catuscio"
