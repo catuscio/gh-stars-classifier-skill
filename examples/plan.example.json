@@ -1,0 +1,14 @@
+{
+  "_comment": "Example classification plan. The skill builds this at runtime after user approval. list_ids map category names to GitHub List node IDs (UL_...). assignments pair each repo (owner/name) with one or more category names.",
+  "list_ids": {
+    "🤖 Agents": "UL_kwDOBKI24c4AWdMZ",
+    "🧠 LLM Infra": "UL_kwDOBKI24c4AWdMx",
+    "📚 Learning": "UL_kwDOBKI24c4AWdMY"
+  },
+  "assignments": [
+    {"repo": "microsoft/autogen", "lists": ["🤖 Agents"]},
+    {"repo": "vllm-project/vllm", "lists": ["🧠 LLM Infra"]},
+    {"repo": "ggerganov/llama.cpp", "lists": ["🧠 LLM Infra"]},
+    {"repo": "fastai/fastbook", "lists": ["📚 Learning"]}
+  ]
+}

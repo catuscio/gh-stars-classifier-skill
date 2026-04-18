@@ -1,0 +1,14 @@
+{
+  "name": "gh-stars-classifier-marketplace",
+  "owner": {
+    "name": "catuscio"
+  },
+  "plugins": [
+    {
+      "name": "gh-stars-classifier",
+      "source": "./",
+      "description": "Classify GitHub Stars into categories with Claude and sync to GitHub Lists",
+      "version": "0.1.1"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Runtime artifacts
+/tmp/
+stars.json
+categories.json
+classification.json
+*.log
+
+# Skill workspace (created by the skill at runtime)
+.gh-stars-workspace/
+
+# OMC harness state (not part of the plugin)
+.omc/
+.claude/

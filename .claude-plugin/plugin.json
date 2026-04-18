@@ -1,0 +1,19 @@
+{
+  "name": "gh-stars-classifier",
+  "version": "0.1.1",
+  "description": "Classify your GitHub starred repositories into semantic categories and sync them to GitHub Lists, using Claude's reasoning instead of static keyword rules.",
+  "author": {
+    "name": "catuscio"
+  },
+  "homepage": "https://github.com/catuscio/gh-stars-classifier-skill",
+  "repository": "https://github.com/catuscio/gh-stars-classifier-skill",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "stars",
+    "classifier",
+    "lists",
+    "organize",
+    "productivity"
+  ]
+}
